@@ -580,7 +580,7 @@ special problem since it is two fields treated as one and the type field
 will generally waste padding space if stored in order:
 
 To help pack unions better these can be added with the type
-seperate from the value reference using `add_type(B, test.type)`,
+separate from the value reference using `add_type(B, test.type)`,
 `add_value(B, test)` where the value is only added if the type is
 not `NONE`. The `add_type` should be called last since it is the
 smallest type.

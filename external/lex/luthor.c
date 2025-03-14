@@ -1352,7 +1352,7 @@ lex_mode_normal:
                      * become 001(octal), and 001(octal),.0(float)
                      * which should be treated as an error because
                      * future extensions might allow octal floats.
-                     * (Not likely, but interpretion is ambigious).
+                     * (Not likely, but interpretation is ambigious).
                      */
                     break;
                 } /* Switch under '0' case. */

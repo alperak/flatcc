@@ -576,7 +576,7 @@ In more detail:
 - MAJOR: Generate json printer and parser.
 - Added high performance integer printinger to portable library
   and fast floating point priting to runtime library (grisu3) for JSON.
-- Comparison agains default value now prints float to generated source
+- Comparison against default value now prints float to generated source
   with full precision ("%.17g").
 - MAJOR: read-only generated files no longer attempt to be independent
   of files in the flatcc include dir. Instead they will use one
