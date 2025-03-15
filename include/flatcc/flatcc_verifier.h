@@ -209,7 +209,7 @@ int flatcc_verify_typed_buffer_header(const void *buf, size_t bufsiz, flatbuffer
  */
 int flatcc_verify_buffer_header_with_size(const void *buf, size_t *bufsiz, const char *fid);
 
-int flatcc_verify_typed_buffer_header_with_size(const void *buf, size_t *bufsiz, flatbuffers_thash_t type_hash);
+int flatcc_verify_typed_buffer_header_with_size(const void *buf, size_t *bufsiz, flatbuffers_thash_t thash);
 
 /*
  * The following functions are typically called by a generated table
