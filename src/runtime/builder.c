@@ -1127,7 +1127,7 @@ flatcc_builder_vt_ref_t flatcc_builder_create_vtable(flatcc_builder_t *B,
      * struct).
      *
      * The vt_ref is stored as the reference + 1 to avoid having 0 as a
-     * valid reference (which usally means error). It also idententifies
+     * valid reference (which usually means error). It also idententifies
      * vtable references as the only uneven references, and the only
      * references that can be used multiple times in the same buffer.
      *

@@ -1511,7 +1511,7 @@ the target type if not the first this results in:
 
 Because Green is 2, Red is 1, Blue is 8 and repeated.
 
-__NOTE__: Duplicate values should be considered implemention dependent
+__NOTE__: Duplicate values should be considered implementation dependent
 as it cannot be guaranteed that all flatbuffer JSON parsers will handle
 this the same. It may also be that this implementation will change in
 the future, for example to use bitwise or when all members and target
@@ -1705,7 +1705,7 @@ for binary encoded nested buffers), but it is useful for testing.
 
 Note that json parsing and printing is very fast reaching 500MB/s for
 printing and about 300 MB/s for parsing. Floating point parsing can
-signficantly skew these numbers. The integer and floating point parsing
+significantly skew these numbers. The integer and floating point parsing
 and printing are handled via support functions in the portable library.
 In addition the floating point `include/flatcc/portable/grisu3_*` library
 is used unless explicitly disable by a compile time flag. Disabling
@@ -2000,7 +2000,7 @@ value. Likewise the `is_present` method can be used to test if a field was
 actually stored in the buffer when reading it.
 
 When a table has many fields, most of which just hold default settings,
-signficant space can be saved using default values, but it also means that an
+significant space can be saved using default values, but it also means that an
 absent value does not indicate null. Field absence is essentially just a data
 compression technique, not a semantic change to the data. However, it is
 possible to use `force_add` and `is_present` to interpret values as null when
