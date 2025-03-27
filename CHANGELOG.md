@@ -34,9 +34,9 @@
 - Fix `__[portable_aligned_alloc,` the fallback implementation of `aligned_alloc`
   so returns null proper and not a small offset on alloc failure. Most
   platforms do not depend on this function (#269).
-  Also fix equivalent FLATCC_ALIGNED_ALLOC that does not necesserily use malloc.
+  Also fix equivalent FLATCC_ALIGNED_ALLOC that does not necessarily use malloc.
 - Fix flatcc compiler error message when schema has a union as first table field
-  with explicit id attribute 1. Explict id must leave space for the hidden type
+  with explicit id attribute 1. Explicit id must leave space for the hidden type
   field, but id 1 is valid since id 0 is valid for the type field id. (#271).
 - Add C23 support for "pstdbool.h" header.
 - Fix strict aliasing UB. In the vast majority of cases `*(T *)p` style memory
@@ -56,8 +56,8 @@
   C code generation. Unlikely worst case a file might not be included which
   would cause a compile time error in user code. However, do take note if
   using the str_set table for other purposes. (#308).
-- Fix some GCC indentation warningns in generated code - warnings are
-  disabled in build already, but this may help some user (#313).
+- Fix some GCC indentation warnings in generated code - warnings are
+  disabled in build already, but this may help some users (#313).
 
 ## [0.6.1]
 
@@ -100,7 +100,7 @@
 - Add stdalign support for TCC compiler (#174).
 - Add RPC data to bfbs binary schema (#181).
 - Fix support for printing JSON enum vectors (#182).
-- Silence GCC 11 identation warning (#183).
+- Silence GCC 11 indentation warning (#183).
 - Fix type of code field on json test (#184).
 - Add `end_loc` to parser state of root json parsers (#186).
 - BREAKING: Add per table `<name>_file_extension` and fixed wrong per table
@@ -113,10 +113,10 @@
 - Fix schema parser returning on success on some failure modes (#193).
 - Fix larger integer literal types in JSON parser and printer (#194).
 - Add pattributes.h to portable library and replace GCC fallthrough comments
-  with fallthough attribute to also silence clang warnings (#203).
+  with fallthrough attribute to also silence clang warnings (#203).
 - Remove misguided include guards from `portable/pdiagnostic_push/pop.h` and fix
   related and expected warnings in other code. NOTE: End user code might be
-  affected because warnigs were disabled more broadly than intended. Also note
+  affected because warnings were disabled more broadly than intended. Also note
   that warnings will still be disabled after pop if the compiler does not
   support push/pop diagnostics (#205).
 - Fix verifier crash on malicious string length input (#221).
