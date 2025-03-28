@@ -129,17 +129,20 @@ To create another test project named foobar, call `scripts/setup.sh -s -x
 
 ### Integrating FlatCC
 
-To answer: "How do I integrate FlatCC into my project":
+To answer the question:
 
-You do not need CMake and you do not need a prebuilt runtime library, though you can.
+> "How do I integrate FlatCC into my project with minimal dependencies"
 
-You need to:
+You do not need CMake and you do not need a prebuilt runtime library,
 
-- Generate files with the flatcc tool, and include them.
-- Add `include/flatcc` in the include path (correct version), using `-I include` if at flatcc root.
-- Link with zero or more from `src/runtime/*.c` (correct version).
-- Possibly disable certain warnings (notably disable GCC pedantic). The main CMake project does that for you.
-- Potentially work around platform limitations, often using `-DPORTABLE_...=0/1`, e.g. if `stdalign.h`
+You do need the `flatcc` tool to initially generate your own schema files and
+then you need to update your project to:
+
+- Include the generated header files.
+- Add `include/flatcc` (correct version) to the include path, e.g., using `-I include` if at flatcc root.
+- Link with zero or more files from `src/runtime/*.c` (correct version).
+- Possibly disable certain warnings (notably disable GCC pedantic).
+- Potentially work around platform limitations, e.g., using `-DPORTABLE_HAS_INCLUDE_STDALIGN=0` if `stdalign.h`
   should be, but isn't, available on your platform. See `include/flatcc/portable/*.h` for details.
 
 You should be able to compile a test project with just a single line like:
@@ -150,10 +153,6 @@ cc -I include src/runtime/build.c myprogram.c
 
 If you only read flatbuffer files, and do not build, verify, parse JSON, or print JSON,
 you will not need any runtime `.c` files.
-
-You can look at the `../monster/scritps/build.sh` file to see how a minimal
-build is configured, though you might want to replace the library with `.c`
-files directly to minimize build dependencies.
 
 If you have a system installed `flatcc` package, it might have the wrong
 version of header or library files. You need to somehow override that if you
