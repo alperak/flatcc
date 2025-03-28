@@ -133,7 +133,7 @@ To answer the question:
 
 > "How do I integrate FlatCC into my project with minimal dependencies"
 
-You do not need CMake and you do not need a prebuilt runtime library,
+You do not need CMake and you do not need a prebuilt runtime library.
 
 You do need the `flatcc` tool to initially generate your own schema files and
 then you need to update your project to:
