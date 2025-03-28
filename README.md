@@ -160,7 +160,7 @@ version of header or library files. You need to somehow override that if you
 have generated files from a more recent version of flatcc.
 
 That said, you can also use the main CMake project to build libraries, or
-just look at it see which warnings and flags are important to your compiler.
+just look at it to see which warnings and flags are important to your compiler.
 
 See also [Building](#building).
 
